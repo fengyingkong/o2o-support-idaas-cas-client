@@ -97,8 +97,8 @@ public class HelloController {
 		if (ObjectUtils.isEmpty(session.getAttribute("loginUserId"))) {
 			response.sendRedirect(redirectUrl);
 		}
-		Boolean delKey = redisTemplate.delete(Contants.REDIS_SESSION_CAS_CLIENT.concat((String)session.getAttribute("loginUserId")));
-		log.info(delKey+"-----------退出系统并删除redis：{}", Contants.REDIS_SESSION_CAS_CLIENT.concat((String)session.getAttribute("loginUserId")));
+		redisTemplate.delete(Contants.REDIS_SESSION_CAS_CLIENT.concat((String)session.getAttribute("loginUserId")));
+		//返回前端后，前端重定向登出地址
 		return new ResponseEntity<>(R.success("删除成功"), HttpStatus.OK);
 
 	}

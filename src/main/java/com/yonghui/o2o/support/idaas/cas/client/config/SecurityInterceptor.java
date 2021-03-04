@@ -38,7 +38,7 @@ public class SecurityInterceptor implements HandlerInterceptor {
                 return true;
             }
         }
-
+        //401返回给前端，前端重定向登录地址
         response401(response);
         return false;
     }
