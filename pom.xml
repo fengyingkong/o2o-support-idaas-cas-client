@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yonghui</groupId>
+    <artifactId>o2o-support-idaas-cas-client</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>o2o-support-idaas-cas-client</name>
+    <description>cas客户端集成测试1</description>
+
+    <parent>
+        <groupId>com.yonghui</groupId>
+        <artifactId>yh-starter-parent</artifactId>
+        <!-- 基础包版本，正式版本使用(x.x.x-RELEASE);开发版本使用(x.x.x-SNAPSHOT) -->
+        <version>2.1.3-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.yonghui</groupId>
+            <artifactId>yh-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.yonghui</groupId>
+            <artifactId>yh-starter-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cas.starter</groupId>
+            <artifactId>cas-client-spring-boot-starter</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+
+
+
+    </dependencies>
+
+    <build>
+        <finalName>app</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
+
