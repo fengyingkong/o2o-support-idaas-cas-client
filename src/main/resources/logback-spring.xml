@@ -14,7 +14,7 @@
     <springProperty scope="context" name="appName" source="spring.application.name" defaultValue="o2o-support-idaas-cas-client"/>
     <springProperty scope="context" name="appDev" source="spring.profiles.active" defaultValue="DEV"/>
     <springProperty scope="context" name="kafkaTopic" source="logback.kafka.topic" defaultValue="operation-o2o-support"/>
-    <springProperty scope="context" name="kafkaServers" source="logback.kafka.servers" defaultValue="kfk-dev-elk01.yonghui.cn:9092,kfk-dev-elk02.yonghui.cn:9092,kfk-dev-elk03.yonghui.cn:9092"/>
+    <springProperty scope="context" name="kafkaServers" source="logback.kafka.servers" defaultValue="localhost:9092"/>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
@@ -52,6 +52,11 @@
     <logger name="sun.rmi" level="info"/>
     <logger name="c.c.f.apollo.internals.RemoteConfigLongPollService" level="error"/>
 
+    <springProfile name="LOCAL">
+        <root level="info">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
     <springProfile name="DEV">
         <root level="info">
             <appender-ref ref="STDOUT"/>
